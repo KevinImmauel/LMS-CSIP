@@ -19,6 +19,17 @@ def insertbook():
     db.commit()
     print('Book added successfully!')
 
+def deletebook(book):
+    for i in data:
+        if i[1]==book:
+            cur.execute('''delete from table lib where name="%s"'''%(book))
+            print('Book deleted successfully!')
+
+def updatebook(book,prop,newpropval):
+    for i in data:
+        if i[1]==book:
+            cur.execute('''update lib set "%s"=%s where name=%s'''%(prop,newpropval,book))
+
 def getbook(book):
     for i in data:
         if i[1] == book:
@@ -28,3 +39,8 @@ def getbookbyauthor(author):
     for i in data:
         if i[2]==author:
             print(f'{i[1]}, A book written by {i[2]}, contains {i[4]} pages only for {i[3]}$')
+
+def getbooksbyauthor(author):
+    for i in data:
+        if i[2]==author:
+            print()
