@@ -23,12 +23,14 @@ def deletebook(book):
     for i in data:
         if i[1]==book:
             cur.execute('''delete from table lib where name="%s"'''%(book))
+            db.commit()
             print('Book deleted successfully!')
 
 def updatebook(book,prop,newpropval):
     for i in data:
         if i[1]==book:
-            cur.execute('''update lib set "%s"=%s where name=%s'''%(prop,newpropval,book))
+            cur.execute('''update lib set %s="%s" where name="%s"'''%(prop,newpropval,book))
+            db.commit()
 
 def getbook(book):
     for i in data:
@@ -44,3 +46,25 @@ def getbooksbyauthor(author):
     for i in data:
         if i[2]==author:
             print()
+
+def borrowbook(bookno):
+    for i in data:
+        if i[0]==bookno:
+            cur.execute('''update lib set available="0" where sno="%s"'''%(bookno))
+            db.commit()
+            print('UPDATED DATABASE SUCCESFULLY')
+
+def returnbook(bookno):
+    for i in data:
+        if i[0]==bookno:
+            cur.execute('''update lib set available="1" where sno="%s"'''%(bookno))
+            db.commit()
+            print('UPDATED DATABASE SUCCESFULLY')
+
+def checkbookavail(bookno):
+    for i in data:
+        if i[0]==bookno:
+            if i[-1]==1:
+                print('Book is Available!')
+            else:
+                print('Book is not available!')
