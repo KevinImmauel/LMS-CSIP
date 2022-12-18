@@ -1,0 +1,4 @@
+# ACKNOWLEDGEMENT
+I would like to express my special thanks to my computer teacher **Mrs. Leena**, who give me the golden opportunity to do this wonderful project on the topic **Library Management System**. I am also very grateful to my other teachers and school teachers for helping me with the necessary equipment and valuable guidance.
+
+Finally, I would like to thank my parents and close friends, who were always with me from imagination to the implementation of this project. Without their cooperation, this project would not have been completed. Only because of all of you, I was able to make my project successful and make it a good enjoyable experience.
