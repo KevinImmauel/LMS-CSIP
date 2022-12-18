@@ -13,3 +13,5 @@ lenofdata = len(data)
 def insertrecord(name,classs,date,bookno):
     cur2.execute('''insert into record values(%d,"%s","%s","%s",%d)'''%(lenofdata+1,date,name,classs,bookno))
     db2.commit()
+
+#THIS FILE CONTAINS 17 LINES
