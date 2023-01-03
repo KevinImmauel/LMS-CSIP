@@ -118,7 +118,7 @@ def getbook():
         if checkbook(book) == True:
             for i in data:
                 if i[1] == book:
-                    print(f'Nice {i[0]}')
+                    print(f'Book No.{i[0]}, {i[1]} written by {i[2]}.')
         else:
             print('Book does not exist! Try again!')
             getbook()
@@ -127,7 +127,7 @@ def getbook():
         if checkauthor(author) == True:
             for i in data:
                 if i[2] == author:
-                    print(f'Nice {i[0]}')
+                    print(f'Book No.{i[0]}, {i[1]} written by {i[2]}.')
         else:
             print('Author does not exist! Try again!')
             getbook()
@@ -137,14 +137,14 @@ def getbook():
 def borrowbook(bookno):
     for i in data:
         if i[0]==bookno:
-            cur.execute('''update lib set available="0" where sno="%s"'''%(bookno))
+            cur.execute('''update lib set available="0" where snobook="%s"'''%(bookno))
             db.commit()
             print('UPDATED DATABASE SUCCESFULLY')
 
 def returnbook(bookno):
     for i in data:
         if i[0]==bookno:
-            cur.execute('''update lib set available="1" where sno="%s"'''%(bookno))
+            cur.execute('''update lib set available="1" where snobook="%s"'''%(bookno))
             db.commit()
             print('UPDATED DATABASE SUCCESFULLY')
 
