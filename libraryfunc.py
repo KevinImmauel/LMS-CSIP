@@ -1,3 +1,6 @@
+# libraryfunc.py FILE
+# CONTAINS 166 LINES
+
 import mysql.connector
 import main
 from mysql.connector.errors import Error
@@ -149,11 +152,15 @@ def returnbook(bookno):
             print('UPDATED DATABASE SUCCESFULLY')
 
 def checkbookavail(bookno):
+    a = 0
     for i in data:
         if i[0]==bookno:
             if i[-1]==1:
                 print('Book is Available!')
+                a = 1
             else:
                 print('Book is not available!')
+                a = 0
+    return a
 
-#THIS FILE CONTAINS 159 LINES
+# END OF FILE

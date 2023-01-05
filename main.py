@@ -1,3 +1,6 @@
+# main.py FILE
+# CONTAINS 169 LINES
+
 import libraryfunc
 import recordfunc
 from datetime import date
@@ -102,11 +105,14 @@ def recscreen():
             except ValueError:
                 print('Value Error! Please try again!')
         if libraryfunc.checksno(bookno) == True:
-            libraryfunc.borrowbook(bookno)
-            recordfunc.insertrecord(name,classs,today,bookno)
-            print('BORROWED BOOK SUCCESSFULLY!')
+            if libraryfunc.checkbookavail(bookno) == 1:
+                libraryfunc.borrowbook(bookno)
+                recordfunc.insertrecord(name,classs,today,bookno)
+                print('BORROWED BOOK SUCCESSFULLY!')
+            else:
+                print('Book is currently not available!')
         else:
-            print('Try again!')
+            print('Book Not Found!')
         recscreen()
     elif optrecord==2:
         print('ENTER YOUR DETAILS BELOW')
@@ -120,11 +126,14 @@ def recscreen():
             except ValueError:
                 print('Value Error! Please try again!')
         if libraryfunc.checksno(bookno) == True:
-            libraryfunc.returnbook(bookno)
-            recordfunc.insertrecord(name,classs,today,bookno)
-            print('RETURNED BOOK SUCCESSFULLY!')
+            if libraryfunc.checkbookavail(bookno) == 0:
+                libraryfunc.returnbook(bookno)
+                recordfunc.insertrecord(name,classs,today,bookno)
+                print('RETURNED BOOK SUCCESSFULLY!')
+            else:
+                print('Book is already present in library!')
         else:
-            print('Try again!')
+            print('Book Not Found!')
         recscreen()
     elif optrecord==3:
         while True:
@@ -157,4 +166,4 @@ def abtscreen():
     else:
         mainscreen()
 
-#THIS FILE CONTAINS 160 LINES
+# END OF FILE

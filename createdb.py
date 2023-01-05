@@ -1,3 +1,6 @@
+# createdb.py FILE
+# CONTAINS 16 LINES
+
 import mysql.connector
 
 db = mysql.connector.connect(user='root',password='root',host='localhost')
@@ -10,4 +13,4 @@ def createdb():
     cur.execute('create table record (sno int primary key not null, dofentry date not null, name varchar(30) not null, class varchar(10) not null, snobook int not null')
     db.commit()
 
-#THIS FILE CONTAINS 13 LINES
+# END OF FILE

@@ -1,3 +1,6 @@
+# recordfunc.py FILE
+# CONTAINS 20 LINES
+
 import mysql.connector
 
 db2 = mysql.connector.connect(user='root',password='root',host='localhost')
@@ -14,4 +17,4 @@ def insertrecord(name,classs,date,bookno):
     cur2.execute('''insert into record values(%d,"%s","%s","%s",%d)'''%(lenofdata+1,date,name,classs,bookno))
     db2.commit()
 
-#THIS FILE CONTAINS 17 LINES
+# END OF FILE

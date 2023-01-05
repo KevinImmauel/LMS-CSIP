@@ -143,7 +143,7 @@ def getbook():
         if checkbook(book) == True:
             for i in data:
                 if i[1] == book:
-                    print(f'Nice {i[0]}')
+                    print(f'Book No.{i[0]}, {i[1]} written by {i[2]}.')
         else:
             print('Book does not exist! Try again!')
             getbook()
@@ -152,7 +152,7 @@ def getbook():
         if checkauthor(author) == True:
             for i in data:
                 if i[2] == author:
-                    print(f'Nice {i[0]}')
+                    print(f'Book No.{i[0]}, {i[1]} written by {i[2]}.')
         else:
             print('Author does not exist! Try again!')
             getbook()
@@ -168,12 +168,16 @@ The function is named as `checkbookavail()` in the `libraryfunc.py` file and is 
 
 ``` python
 def checkbookavail(bookno):
+    a = 0
     for i in data:
         if i[0]==bookno:
             if i[-1]==1:
                 print('Book is Available!')
+                a = 1
             else:
                 print('Book is not available!')
+                a = 0
+    return a
 ```
 
 ## 3. RECORD FUCNTIONS
