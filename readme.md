@@ -8,7 +8,7 @@ The user can search for a book in the database by its name, author’s name and 
 
 This program will contain various more functions we will go through all of them in the documentation. 
 
-![THIS IS AN IMAGE](CSLMS-01.png)
+![THIS IS AN IMAGE](project/markdown/CSLMS-01.png)
 
 # Working Description
 
